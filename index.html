@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Password Protected Page</title>
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div id="password-prompt">
-    <h2>Enter Password</h2>
-    <form onsubmit="return checkPassword()">
+  </head>
+  <body>
+    <div id="password-prompt">
+      <h2>Enter Password</h2>
+      <form onsubmit="checkPassword(); return false;">
         <div class="password-box">
-            <input type="password" id="password" placeholder="Password" required>
-            <input type="submit" value="Submit">
+          <input type="password" id="password" placeholder="Password" required>
+          <input type="submit" value="Submit">
         </div>
-    </form>
-    <p id="error-message" style="color: red; display: none;">Incorrect Password. Try again.</p>
-</div>
+      </form>
+      <p id="error-message" style="color: red; display: none;">Incorrect Password. Try again.</p>
+    </div>
 
-<div id="protected-content" style="display:none">
-    <h1>WELCOME</h1>
-    <p>This is the protected content of the page.</p>
-</div>
-<script src="js/script.js"></script>
-</body>
+    <div id="protected-content" style="display:none">
+      <h1>WELCOME</h1>
+      <p>This is the protected content of the page.</p>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
