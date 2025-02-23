@@ -10,15 +10,33 @@ async function hashPassword(password) {
   return hashHex;
 }
 
-async function checkPassword() {
-  const inputPassword = document.getElementById('password').value;
+async function checkPassword(event) {
+  event.preventDefault(); // Prevent form submission
+  console.log("🔹 Password function triggered");
+
+  const inputPassword = document.getElementById("password").value.trim();
+  console.log("🔹 User Input:", inputPassword);
+
   const inputHash = await hashPassword(inputPassword);
+  console.log("🔹 Computed Hash:", inputHash);
+  console.log("🔹 Correct Hash:", correctHash);
 
   if (inputHash === correctHash) {
-    document.getElementById('password-prompt').style.display = 'none';
-    document.getElementById('protected-content').style.display = 'block';
+      console.log("✅ Password Matched!");
+      document.getElementById("password-prompt").style.display = "none";
+      document.getElementById("protected-content").style.display = "block";
+
+      // ✅ Debugging the Image
+      let image = document.getElementById("resume-image");
+      if (image) {
+          console.log("✅ Image Element Found:", image);
+          image.style.display = "block";
+      } else {
+          console.error("❌ Image Element Not Found!");
+      }
   } else {
-    document.getElementById('error-message').style.display = 'block';
+      console.log("❌ Incorrect Password!");
+      document.getElementById("error-message").style.display = "block";
   }
-  return false;
 }
+

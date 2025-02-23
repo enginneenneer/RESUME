@@ -8,18 +8,18 @@
   <body>
     <div id="password-prompt">
       <h2>Enter Password</h2>
-      <form onsubmit="checkPassword(); return false;">
-        <div class="password-box">
-          <input type="password" id="password" placeholder="Password" required>
-          <input type="submit" value="Submit">
-        </div>
+      <form onsubmit="checkPassword(event); return false;">
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <input type="submit" value="Submit">
       </form>
-      <p id="error-message" style="color: red; display: none;">Incorrect Password. Try again.</p>
+      <p id="error-message" style="display: none; color: red;">Incorrect Password. Try again.</p>
+
     </div>
 
-    <div id="protected-content" style="display:none">
+    <div id="protected-content" style="display: none;">
       <h1>WELCOME</h1>
-      <p>This is the protected content of the page.</p>
+      <p>This is the protected content.</p>
+      <img id="resume-image" src="images/resume.jpg" alt="Resume Image" style="display: none; width: 300px;">
     </div>
 
     <script src="js/script.js"></script>
