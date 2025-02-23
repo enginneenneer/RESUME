@@ -3,30 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Password Protected Page</title>
-    <style>
-      body {
-        background-color: black;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding-top: 50px;
-      }
-      #protected-content {
-        display: none;
-      }
-      .password-box {
-        margin: 20px auto;
-        width: 300px;
-      }
-      input[type="password"] {
-        width: 80%;
-        padding: 10px;
-        margin-right: 10px;
-      }
-      input[type="submit"] {
-        padding: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div id="password-prompt">
@@ -40,24 +17,10 @@
     <p id="error-message" style="color: red; display: none;">Incorrect Password. Try again.</p>
 </div>
 
-<div id="protected-content">
+<div id="protected-content" style="display:none">
     <h1>WELCOME</h1>
     <p>This is the protected content of the page.</p>
 </div>
-
-<script>
-      const correctPassword = 'abc123';
-
-      function checkPassword() {
-        const inputPassword = document.getElementById('password').value;
-        if (inputPassword === correctPassword) {
-          document.getElementById('password-prompt').style.display = 'none';
-          document.getElementById('protected-content').style.display = 'block';
-        } else {
-          document.getElementById('error-message').style.display = 'block';
-        }
-        return false; // Prevent form submission
-      }
-    </script>
+<script src="js/script.js"></script>
 </body>
 </html>
