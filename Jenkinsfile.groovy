@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Check HTML & JS Quality') {
             steps {
-                sh 'npm install -g htmlint eslint'
-                sh 'htmlint index.html'
-                sh 'eslint js/script.js --fix'
+                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "npm install -g htmlint eslint"'
+                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "htmlint index.html"'
+                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "eslint js/script.js --fix"'
             }
         }
     }
